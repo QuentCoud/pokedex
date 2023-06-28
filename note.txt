@@ -1,0 +1,15 @@
+ng g c /* componentName */ = generer un nouveau component
+
+<p>Il y a {{numberOfPokemon}} pokemons</p> = invoquer une variable
+<px-componentName></px-componentName> = invoquer un composant
+<p [textContent]="numberOfPokemon"></p> = Binding de donnée
+
+.ts d'un composant = gestion de la data (declaration de variable/fonction...)
+fichier app.module.ts permet de déclarer/supprimer la declaration des composants.
+
+*ngFor/if/... pour faire de l'algo dans le template.
+<p [NgStyle]="{color: color}">Test</p> = ngStyle permet d'interagir avec le style de l'élément html (enlever/ajouter dynamiquement)
+<p [NgClasse]="{color: color}">Test</p> = NgClasse permet d'interagir avec les classes de l'élément html (enlever/ajouter dynamiquement)
+
+<p #inputData>this is a search input</p> = #inputData est une variable local au template
+<input (click)="inputData.focus()" type="text"> = On peut accéder et interagir avec cette variable par la suite.

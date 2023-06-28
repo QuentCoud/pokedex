@@ -1,0 +1,16 @@
+.pokemonCard {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  text-align: center;
+  border: 3px solid #3b4cca;
+}
+
+.pokemonLargeCard {
+  background-color: #FFFACD;
+}
+
+.pokemonLargeCard.highlighted {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}

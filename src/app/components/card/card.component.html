@@ -1,0 +1,29 @@
+<article
+  (click)="goToPokemonDetailsComponent()"
+  (mouseenter)="isCardHovered = true"
+  (mouseleave)="isCardHovered = false"
+  class="pokemonLargeCard"
+  [ngClass]="{ 'highlighted': isCardHovered === true }"
+>
+  <div class="grid">
+    <div>
+      <article class="pokemonCard">
+        <img [src]="pokemon.sprites.front_default" alt="Pikachu">
+        <p>{{ getPokemonFrenchName(pokemon.speciesDetails.names) }}</p>
+      </article>
+    </div>
+    <div>
+        <p>
+          <strong>
+            N°Pokedex : #{{ pokemon.speciesDetails.id }}
+          </strong>
+        </p>
+        <div class="grid">
+          <px-type *ngFor="let type of pokemon.types" [type]="type"></px-type>
+        </div><br>
+        <p>
+          {{ getPokemonFrenchDescription(pokemon.speciesDetails.flavor_text_entries) }}
+        </p>
+    </div>
+  </div>
+</article>
