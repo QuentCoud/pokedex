@@ -11,30 +11,24 @@ export class CardComponent {
   isCardHovered: boolean = false;
 
   constructor(private router: Router) {}
-  
+
   getPokemonFrenchName(names: any[]): string {
     const frenchNameObj = names.find((name) => name.language.name === 'fr');
     return frenchNameObj ? frenchNameObj.name : '';
   }
 
   getPokemonFrenchDescription(flavor_text_entries: any []): string {
-    let frenchDescriptionObj = flavor_text_entries.find((description) => description.language.name = 'fr' && description.version.name == 'black')
+    let frenchDescriptionObj = flavor_text_entries.find((description) => description.language.url == "https://pokeapi.co/api/v2/language/5/")
     if(!frenchDescriptionObj) {
-      frenchDescriptionObj = flavor_text_entries.find((description) => description.language.name = 'fr'  && description.version.name == 'sun')
+      frenchDescriptionObj = flavor_text_entries.find((description) => description.language.url = "https://pokeapi.co/api/v2/language/9/")
     } 
-    if (!frenchDescriptionObj) {
-      frenchDescriptionObj = flavor_text_entries.find((description) => description.language.name = 'fr')
-    }
-    if (!frenchDescriptionObj) {
-      frenchDescriptionObj = flavor_text_entries.find((description) => description.language.name = 'en')
-    }
-    if (!frenchDescriptionObj) {
+    if(!frenchDescriptionObj) {
       frenchDescriptionObj = flavor_text_entries[0]
-    }
+    } 
     return frenchDescriptionObj ? frenchDescriptionObj.flavor_text : '';
   }
 
   goToPokemonDetailsComponent() {
-    this.router.navigate(['details', this.pokemon.id]);
+    this.router.navigate(['/details']);
   }
 }

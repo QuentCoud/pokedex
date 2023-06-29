@@ -8,7 +8,7 @@
   <div class="grid">
     <div>
       <article class="pokemonCard">
-        <img [src]="pokemon.sprites.front_default" alt="Pikachu">
+        <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.speciesDetails.names }}">
         <p>{{ getPokemonFrenchName(pokemon.speciesDetails.names) }}</p>
       </article>
     </div>

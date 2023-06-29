@@ -1,7 +1,9 @@
+<header>
+  <px-header></px-header>
+</header>
 <body style="background-image: url('../assets/background.jpg'); background-repeat: repeat;">
   <main class="container">
-    <img src="../assets/International_Pokémon_logo.png">
-    <px-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></px-card><br>
+    <router-outlet></router-outlet>
     <!-- <h1>Pokedex</h1>
     <p>Il y a {{ numberOfPokemon }} pokemons</p>
     <p [textContent]="numberOfPokemon"></p>
